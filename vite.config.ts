@@ -5,6 +5,12 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    base: '/build/',
+
+    server: {
+        origin: 'https://tes-inertia-production-cb73.up.railway.app',
+    },
+
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
@@ -22,5 +28,4 @@ export default defineConfig({
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
         },
     },
-    base: '/build/',
 });
